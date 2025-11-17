@@ -19,8 +19,9 @@ const geistMono = Geist_Mono({
 const playlistScript = localFont({
   src: "./fonts/playlist-script/PlaylistScript.otf",
   variable: "--font-playlist-script",
-  weight: "400",
+  display: "swap",
 });
+
 
 export const metadata: Metadata = {
   title: "Traamp",
@@ -29,18 +30,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playlistScript.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} ${playlistScript.variable}
+ antialiased`}>
         <Navbar />
+        
         {children}
-        <Footer />
+        <Footer/>
       </body>
     </html>
   );
 }
+
