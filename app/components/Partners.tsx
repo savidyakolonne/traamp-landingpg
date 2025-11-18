@@ -7,7 +7,6 @@ export default function Partners() {
     { src: "/logos/google.png", name: "NTC" },
     { src: "/logos/apple.png", name: "SriLanka Airlines" },
     { src: "/logos/meta.png", name: "SLITHM" },
-    { src: "/logos/iitlogo.png", name: "IIT" },
     { src: "/logos/SLTDAlogo.png", name: "Sri Lanka Tourism Development Authority" },
   ];
 

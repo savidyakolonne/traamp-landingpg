@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* Slide animation */
 @keyframes slide {
   0% {
     transform: translateX(0);
@@ -11,4 +12,17 @@
 
 .animate-slide {
   animation: slide 15s linear infinite;
+}
+
+/* Gentle float animation */
+@keyframes gentleFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }

@@ -2,23 +2,21 @@
 
 import React, { useState } from "react"
 import { FaBars, FaTimes } from "react-icons/fa"
-import Image from "next/image" 
+import Image from "next/image"
 import Link from 'next/link'
-
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="flex items-center justify-between px-6 md:px-25 py-4 bg-white shadow-md relative ">
+    <nav className="flex items-center justify-between px-6 md:px-25 py-4 bg-white shadow-md relative">
+      
       {/* Logo */}
       <Link href="/">
-       <div className="cursor-pointer md:ml-8 lg:ml-12
-">
-        <Image src="/logo.png" alt="Logo" width={60} height={60} />
-      </div>
+        <div className="cursor-pointer md:ml-8 lg:ml-12">
+          <Image src="/logo.png" alt="Logo" width={60} height={60} />
+        </div>
       </Link>
-      
 
       {/* Hamburger Icon (Mobile) */}
       <div
@@ -39,12 +37,17 @@ const Navbar = () => {
         <Link href="/"><li className="hover:text-green-400 cursor-pointer py-2 md:py-0">Home</li></Link>
         <Link href="/features"><li className="hover:text-green-400 cursor-pointer py-2 md:py-0">Features</li></Link>
         <Link href="/about"><li className="hover:text-green-400 cursor-pointer py-2 md:py-0">About</li></Link>
+
         <li className="mt-4 md:mt-0">
           <button className="bg-green-400 text-white px-5 py-2 rounded-lg hover:bg-green-500 transition-all">
             Join Now
           </button>
         </li>
-        <li className="hover:text-green-400 cursor-pointer py-2 md:py-0">Contact</li>
+
+        {/* Contact Link */}
+        <Link href="/contact">
+          <li className="hover:text-green-400 cursor-pointer py-2 md:py-0">Contact</li>
+        </Link>
       </ul>
     </nav>
   )
