@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use client";
 
 import React, {useState} from "react";
@@ -378,4 +379,10 @@ function FeatureIcon({ id }: { id?: string }) {
         </svg>
       );
   }
+=======
+export default function features(){
+    return(
+        <div>features page</div>
+    )
+>>>>>>> b3ad608dfc68f58f43387461a8fef46c13ad33ce
 }
