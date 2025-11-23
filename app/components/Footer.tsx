@@ -1,27 +1,29 @@
 import Image from "next/image";
 import Link from "next/link";
 
-
 export default function Footer() {
   return (
     <footer className="bg-[#06790E] text-white py-12 px-6 md:px-40">
-      <div className="
+      <div
+        className="
         max-w-7xl mx-auto 
         grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 
         gap-12 
         text-center md:text-left
-      ">
-        
+      "
+      >
         {/* Logo Section */}
         <div className="flex flex-col items-center md:items-start">
           <div className="flex items-center space-x-3 justify-center md:justify-start">
-            <Image
-              src="/logo.png"
-              alt="Traamp Logo"
-              width={50}
-              height={50}
-              className="rounded-md"
-            />
+            <Link href="/">
+              <Image
+                src="/logo.png"
+                alt="Traamp Logo"
+                width={50}
+                height={50}
+                className="rounded-md cursor-pointer"
+              />
+            </Link>
             <h1 className="text-[40px] font-semibold text-[#71CD65]">
               Traamp
             </h1>
@@ -60,14 +62,14 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline">
-                F&Qs
-              </a>
+              <Link href="/faq" className="hover:underline">
+                FAQs
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <Link href="/privacy" className="hover:underline">
                 Privacy Policy
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -77,16 +79,20 @@ export default function Footer() {
           <h3 className="font-semibold text-lg mb-3">Follow Us</h3>
 
           <div className="flex space-x-6 text-2xl">
-            <a href="#" aria-label="Facebook" className="hover:text-[#71CD65]">
+            <a href="https://www.facebook.com/share/1FyXrNSNi9/" aria-label="Facebook" className="hover:text-[#71CD65]">
               <i className="fab fa-facebook"></i>
             </a>
-            <a href="#" aria-label="Instagram" className="hover:text-[#71CD65]">
+            <a href="https://www.instagram.com/traampcom?igsh=MTRhYnJvcDY0MGducA==" aria-label="Instagram" className="hover:text-[#71CD65]">
               <i className="fab fa-instagram"></i>
             </a>
-            <a href="#" aria-label="YouTube" className="hover:text-[#71CD65]">
+            <a href="https://youtube.com/@traampapp?si=Pj-ctPCWkKCio_B4" aria-label="YouTube" className="hover:text-[#71CD65]">
               <i className="fab fa-youtube"></i>
             </a>
-            <a href="#" aria-label="LinkedIn" className="hover:text-[#71CD65]">
+            <a
+              href="https://www.linkedin.com/company/traamp/"
+              aria-label="LinkedIn"
+              className="hover:text-[#71CD65]"
+            >
               <i className="fab fa-linkedin"></i>
             </a>
           </div>
@@ -96,8 +102,7 @@ export default function Footer() {
       {/* Bottom line */}
       <div className="border-t border-white/40 mt-10 pt-5 text-center">
         <p className="text-sm">© 2025 Traamp. All rights reserved.</p>
-        <p className="text-sm"> Developed by SE-01</p>
-        
+        <p className="text-sm">Developed by SE-01</p>
       </div>
     </footer>
   );

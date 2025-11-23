@@ -1,5 +1,32 @@
 @import "tailwindcss";
 
+@keyframes downloadShake {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(5deg);
+  }
+  20% {
+    transform: rotate(-5deg);
+  }
+  30% {
+    transform: rotate(5deg);
+  }
+  40% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-downloadShake {
+  animation: downloadShake 2.2s ease-in-out infinite; /* slowed down */
+}
+
+
+
 /* Slide animation */
 @keyframes slide {
   0% {
@@ -26,3 +53,33 @@
     transform: translateY(0px);
   }
 }
+
+
+/* Strong highlight animation for CTA */
+@keyframes iosFlashStrong {
+  0% {
+    text-shadow: 0 0 0px rgba(0, 132, 255, 0.0);
+    transform: scale(1);
+    opacity: 1;
+  }
+  40% {
+    text-shadow: 0 0 12px rgba(0, 132, 255, 0.75);
+    transform: scale(1.08);
+    opacity: 0.95;
+  }
+  70% {
+    text-shadow: 0 0 18px rgba(0, 132, 255, 1);
+    transform: scale(1.12);
+    opacity: 1;
+  }
+  100% {
+    text-shadow: 0 0 0px rgba(0, 132, 255, 0.0);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-iosFlashStrong {
+  animation: iosFlashStrong 1.6s ease-in-out infinite;
+}
+
