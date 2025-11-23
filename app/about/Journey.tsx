@@ -3,108 +3,75 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-import small1 from "@/public/about/image1.jpg";
-import small2 from "@/public/about/image2.jpg";
-import small3 from "@/public/about/image3.png";
+import img1 from "@/public/about/image1.jpg";
+import img2 from "@/public/about/image2.jpg";
+import img3 from "@/public/about/image3.png";
 
-const journeyData = [
+const journey = [
   {
     year: "October 2025",
     title: "Interview with Government",
-    description:
-      "Initial research and planning phase for Traamp. Established core team and project vision.",
-    images: [small1, small2, small3],
+    description: "Initial research and planning phase for Traamp. Established core team and project vision.",
+    images: [img1, img2, img3],
   },
   {
     year: "December 2025",
     title: "Development Phase",
-    description:
-      "Building core features and establishing the technical infrastructure.",
-    images: [small1, small2, small3],
+    description: "Building core features and establishing the technical infrastructure.",
+    images: [img1, img2, img3],
   },
 ];
 
 const Journey = () => {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white text-black">
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl font-extrabold mb-10 text-center">
-          Our Journey
-        </h2>
+    <section className="py-24 px-6 sm:px-10 lg:px-20 bg-gray-50">
 
-        <div className="relative">
+      <h2 className="text-4xl sm:text-5xl font-extrabold text-center mb-16 text-gray-900">
+        Our Journey
+      </h2>
 
-          {/* Centered timeline line for md+, left on mobile */}
-          <div className="hidden md:block absolute left-10 top-0 bottom-0 w-1 bg-black/20 rounded" />
-          <div className="block md:hidden absolute left-6 top-0 bottom-0 w-1 bg-black/20 rounded" />
+      <div className="max-w-3xl mx-auto relative">
 
-          <div className="flex flex-col gap-12">
-            {journeyData.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 18 * (i % 2 ? 1 : -1) }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                className="relative md:pl-28 pl-14"
-              >
-                {/* Timeline Dot */}
-                <div
-                  className="absolute -left-[0.7rem] md:-left-[0.95rem] top-1.5 
-                             w-4 h-4 rounded-full bg-black border-4 border-white shadow-md"
-                />
+        {/* Timeline Line */}
+        <div className="absolute left-6 md:left-10 top-0 bottom-0 w-1 bg-gray-300 rounded-xl" />
 
-                {/* Card */}
-                <div className="bg-white p-4 sm:p-6 rounded-xl shadow-md border border-gray-200">
-                  <div className="flex flex-col sm:flex-row sm:items-start gap-4">
+        <div className="flex flex-col gap-12">
 
-                    {/* Year */}
-                    <div className="w-full sm:w-28">
-                      <div className="font-semibold text-sm sm:text-base text-gray-900">
-                        {item.year}
+          {journey.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="relative pl-14 md:pl-24"
+            >
+              {/* Dot */}
+              <div className="absolute left-4 md:left-7 top-1.5 w-4 h-4 bg-green-500 border-4 border-white rounded-full shadow-md" />
+
+              {/* Card */}
+              <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-200">
+                <div className="flex flex-col gap-3">
+
+                  <span className="text-lg font-semibold text-gray-900">{item.year}</span>
+
+                  <h3 className="text-2xl font-bold text-gray-900">{item.title}</h3>
+
+                  <p className="text-gray-700">{item.description}</p>
+
+                  <div className="grid grid-cols-3 gap-3 mt-4">
+                    {item.images.map((img, idx) => (
+                      <div key={idx} className="rounded-xl overflow-hidden shadow">
+                        <Image src={img} alt="timeline" className="w-full h-24 object-cover" />
                       </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="flex-1">
-                      <h3 className="text-lg sm:text-2xl font-extrabold leading-tight">
-                        {item.title}
-                      </h3>
-
-                      <p className="text-gray-700 mt-2 text-sm sm:text-base leading-relaxed">
-                        {item.description}
-                      </p>
-
-                      {/* Images */}
-                      {item.images && item.images.length > 0 && (
-                        <div className="mt-4">
-                          <div className="grid grid-cols-3 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4">
-                            {item.images.map((img, idx) => (
-                              <div
-                                key={idx}
-                                className="rounded-lg overflow-hidden shadow-md border border-gray-200"
-                              >
-                                <div className="w-full h-20 md:h-24 relative">
-                                  <Image
-                                    src={img}
-                                    alt={`${item.title} ${idx + 1}`}
-                                    fill
-                                    sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 120px"
-                                    className="object-cover hover:scale-105 transition-transform duration-300"
-                                  />
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-
+                    ))}
                   </div>
+
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </motion.div>
+          ))}
+
         </div>
       </div>
     </section>

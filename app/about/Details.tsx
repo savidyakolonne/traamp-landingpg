@@ -2,139 +2,108 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+
 import Banu from "@/public/about/Banu.jpeg";
 import Danushka from "@/public/about/Danushka.jpeg";
 
-// End Images
-import end1 from "@/public/about/end1.jpg";
-import end2 from "@/public/about/end3.png";
-import end3 from "@/public/about/end2.png";
-
-interface Lecturer {
-  name: string;
-  imgSrc: string;
-  linkedIn: string;
-}
-
-const lecturers: Lecturer[] = [
+const lecturers = [
   {
     name: "Banu Athuraliya",
+    role: "Lecturer | IIT • SDGP Module Leader",
     imgSrc: Banu,
-    linkedIn: "https://www.linkedin.com/in/banuathuraliya/?originalSubdomain=lk",
+    linkedIn: "https://www.linkedin.com/in/banuathuraliya/",
   },
   {
-    name: "Dhanushka Surendra Rathnayake",
+    name: "Dhanushka Surendra",
+    role: "Lecturer | IIT • Project Supervisor",
     imgSrc: Danushka,
-    linkedIn: "https://www.linkedin.com/in/dhanushka-surendra-rathnayake-776ba266/?originalSubdomain=lk",
+    linkedIn: "https://www.linkedin.com/in/dhanushka-surendra-rathnayake-776ba266/",
   },
 ];
 
 const Details = () => {
   return (
-    <section className="px-4 sm:px-8 md:px-16 lg:px-24 py-20 bg-white">
-      <div className="max-w-5xl mx-auto flex flex-col gap-16">
+    <section className="px-6 sm:px-12 md:px-20 lg:px-32 py-24 bg-white">
 
-        {/* Top Paragraphs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col gap-6 text-gray-700 text-lg leading-relaxed font-semibold"
+      {/* TOP DESCRIPTION */}
+      <motion.div
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="max-w-4xl mx-auto text-gray-700 flex flex-col gap-6"
+      >
+        <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+          We are Team SE-01
+        </h2>
 
-        >
-          <p className="font-bold text-gray-900 text-[25px]">
-            We are a group of students from IIT and the University of Westminster, working together as Team SE-01.
-          </p>
+        <p className="text-lg md:text-xl leading-relaxed">
+          A passionate group of innovators from IIT & UOW, working to make travel
+          safer and more connected.
+        </p>
 
-          <p>
-            Our project is designed to connect travelers in a seamless and engaging
-            way. By providing the tools and platform, we help people share
-            experiences and make meaningful connections.
-          </p>
-          <p>
-            Every feature has been carefully thought out to ensure user satisfaction,
-            safety, and trust. We emphasize quality and reliability in everything we do.
-          </p>
-          <p>
-            Meet our guiding educators, who inspired and supervised this project from
-            start to finish.
-          </p>
-        </motion.div>
+        <p className="text-lg md:text-xl leading-relaxed">
+          Guided by exceptional lecturers, we prioritized user trust, security,
+          and real-world usability.
+        </p>
+      </motion.div>
 
-        {/* Lecturers Section */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-10 place-items-center"
-        >
-          {lecturers.map((lecturer, idx) => (
-            <a
-              key={idx}
-              href={lecturer.linkedIn}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative overflow-hidden rounded-xl shadow-lg border border-gray-200 transition-transform hover:scale-105 w-full max-w-[260px]"
-            >
-              <div className="w-full h-[260px] sm:h-[280px] overflow-hidden">
-                <Image
-                  src={lecturer.imgSrc}
-                  alt={lecturer.name}
-                  width={300}
-                  height={300}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p className="text-white font-semibold text-center px-2">
-                  {lecturer.name}
-                </p>
-              </div>
-            </a>
-          ))}
-        </motion.div>
-
-        {/* Bottom Paragraph */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-gray-700 text-lg leading-relaxed"
-        >
-          <p>
-            We aim to bring innovative solutions to everyday problems for travelers,
-            combining creativity with practical functionality.
-          </p>
-        </motion.div>
-
-        {/* Bottom 3 Images */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {[end1, end2, end3].map((img, index) => (
-            <div
-              key={index}
-              className="rounded-xl overflow-hidden shadow-lg border border-gray-200"
-            >
-              <div className="w-full h-56 sm:h-64 md:h-72 lg:h-64">
-                <Image
-                  src={img}
-                  alt={`End image ${index + 1}`}
-                  className="w-full h-full "
-                />
-              </div>
+      {/* LECTURER CARDS */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="flex flex-wrap justify-center gap-10 mt-20"
+      >
+        {lecturers.map((lec, i) => (
+          <motion.div
+            key={i}
+            whileHover={{ scale: 1.03 }}
+            transition={{ duration: 0.3 }}
+            className="w-72 bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-md 
+                       hover:shadow-xl transition-all duration-300"
+          >
+            {/* IMAGE */}
+            <div className="h-56 w-full overflow-hidden">
+              <Image
+                src={lec.imgSrc}
+                alt={lec.name}
+                className="w-full h-full object-cover"
+              />
             </div>
-          ))}
-        </motion.div>
-      </div>
+
+            {/* CONTENT */}
+            <div className="flex flex-col items-center pt-6 pb-7 px-5">
+              <p className="text-xl font-bold text-gray-900">{lec.name}</p>
+              <p className="text-gray-500 text-sm text-center mt-1">{lec.role}</p>
+
+              {/* LINKEDIN BUTTON */}
+              <a
+                href={lec.linkedIn}
+                target="_blank"
+                className="mt-5 flex items-center gap-2 bg-[#0A66C2] hover:bg-[#004182]
+                           text-white px-5 py-2.5 rounded-full text-sm font-medium
+                           shadow-md transition-all"
+              >
+                
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="white"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M4.98 3.5C4.98 4.6 4.07 5.5 2.98 5.5C1.89 5.5 0.98 4.6 0.98 3.5C0.98 2.4 1.89 1.5 2.98 1.5C4.07 1.5 4.98 2.4 4.98 3.5ZM0.98 22H4.98V7H0.98V22ZM8.98 7V22H12.84V14.5C12.84 12.57 13.36 10.76 15.76 10.76C18.13 10.76 18.16 12.83 18.16 14.63V22H22V13.76C22 9.42 20.15 7 16.57 7C14.23 7 12.84 8.26 12.26 9.34H12.2V7H8.98Z"/>
+                </svg>
+
+                LinkedIn
+              </a>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+
     </section>
   );
 };

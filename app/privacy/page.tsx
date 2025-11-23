@@ -57,7 +57,7 @@ export default function PrivacyPage() {
           <p>
             For privacy questions, email us at:
             <br />
-            <strong>privacy@traamp.com</strong>
+            <strong> infotraamp@gmail.com</strong>
           </p>
 
           {/* Back links */}

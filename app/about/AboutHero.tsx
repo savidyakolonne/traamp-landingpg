@@ -5,107 +5,96 @@ import { motion } from "framer-motion";
 
 import image1 from "@/public/about/image1.jpg";
 import image2 from "@/public/about/image2.jpg";
-import side1 from "@/public/about/side1.jpg";
-import side2 from "@/public/about/side2.jpg";
 import image3 from "@/public/about/image3.png";
 
-const AboutHero = () => {
+const gallery = [
+  {
+    img: image1,
+    title: "Our Team Spirit",
+    desc: "Creativity, late nights, teamwork — the energy behind TRAMMP.",
+  },
+  {
+    img: image2,
+    title: "Building TRAMMP",
+    desc: "Every feature is crafted with intention and purpose.",
+  },
+  {
+    img: image3,
+    title: "Our Journey",
+    desc: "From the first idea to a growing platform for travelers.",
+  },
+];
+
+export default function AboutHero() {
   return (
-    <section className="px-4 sm:px-8 md:px-16 lg:px-24 py-12 bg-gray-50">
+    <section className="px-6 sm:px-10 md:px-16 lg:px-28 py-20 bg-gray-50">
 
       {/* Heading */}
       <motion.h2
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-3xl md:text-5xl font-extrabold text-gray-900 text-center mb-12"
+        transition={{ duration: 0.5 }}
+        className="text-4xl md:text-6xl font-extrabold text-center text-gray-900"
       >
-        Here's who we are <br className="hidden md:block" /> & what our project is about
+        Here&apos;s who we are <br />
+        <span className="text-green-600">and what our project is about</span>
       </motion.h2>
 
-      {/* Cards */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <p className="text-center text-gray-600 mt-4 max-w-xl mx-auto text-lg leading-relaxed">
+        A visual collection of the journey behind TRAMMP — the people, the process,
+        and the passion that drives us forward.
+      </p>
 
-        {/* LEFT CARD */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 flex flex-col gap-6"
-          style={{ backgroundColor: "#CDE8B1" }}
-        >
-          {/* BLOCK 1 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-            <p className="text-gray-900 text-3xl font-bold leading-snug">
-              So as you know a lot about TRAMMP by now, but what about the team behind it?
-            </p>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="flex justify-center"
-            >
-              <div className="w-full max-w-[200px] h-[180px] rounded-xl overflow-hidden ">
-                <Image src={side1} alt="Side 1" className="w-full h-full object-contain" />
-              </div>
-
-            </motion.div>
-          </div>
-
-          <div className="border-t border-gray-300"></div>
-
-          {/* BLOCK 2 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="flex justify-center order-1 md:order-none"
-            >
-              <div className="w-full max-w-[200px] h-[180px] rounded-xl overflow-hidden shadow-md">
-                <Image src={side2} alt="Side 2" className="w-full h-full object-cover" />
-              </div>
-            </motion.div>
-
-            <p className="text-gray-900 text-2xl font-bold leading-snug">
-              Find out who this team is and what they are all about. Discover our journey
-              and the people who made it possible.
-            </p>
-          </div>
-        </motion.div>
-
-        {/* RIGHT CARD */}
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 flex flex-col gap-6"
-        >
-          <div className="grid grid-cols-2 gap-4">
-            <div className="rounded-xl overflow-hidden shadow-md h-[130px] hover:scale-105 transition">
-              <Image src={image1} alt="image1" className="w-full h-full object-cover" />
-            </div>
-            <div className="rounded-xl overflow-hidden shadow-md h-[130px] hover:scale-105 transition">
-              <Image src={image2} alt="image2" className="w-full h-full object-cover" />
+      {/* MOBILE / TABLET (STACKED) */}
+      <div className="grid md:hidden gap-6 mt-12">
+        {gallery.map((item, i) => (
+          <div
+            key={i}
+            className="relative rounded-xl overflow-hidden shadow-lg h-[300px]"
+          >
+            <Image
+              src={item.img}
+              alt={`gallery-mobile-${i}`}
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-black/50 flex flex-col justify-end p-6 text-white">
+              <h1 className="text-2xl font-semibold">{item.title}</h1>
+              <p className="text-sm mt-2">{item.desc}</p>
             </div>
           </div>
+        ))}
+      </div>
 
-          <p className="text-gray-800 text-base md:text-lg leading-snug">
-            Our team blends creativity, innovation, and teamwork to build something meaningful.
-            Every idea is shaped with dedication, purpose, and a strong focus on user experience.
-          </p>
+      {/* DESKTOP EXPANDING GALLERY */}
+      <div className="hidden md:flex items-center gap-6 h-[420px] w-full max-w-6xl mt-16 mx-auto">
 
-          <div className="rounded-xl overflow-hidden shadow-md h-[200px] hover:scale-105 transition">
-            <Image src={image3} alt="image3" className="w-full h-full object-cover" />
+        {gallery.map((item, i) => (
+          <div
+            key={i}
+            className="relative group flex-grow transition-all w-56 h-[420px] duration-500 hover:w-full rounded-xl overflow-hidden"
+          >
+            {/* Image */}
+            <Image
+              src={item.img}
+              alt={`gallery-${i}`}
+              fill
+              className="object-cover object-center"
+            />
+
+            {/* Overlay */}
+            <div className="absolute inset-0 flex flex-col justify-end p-10 text-white 
+                            bg-gradient-to-t from-black/70 to-transparent
+                            opacity-0 group-hover:opacity-100 
+                            transition-all duration-500">
+              <h1 className="text-3xl font-semibold">{item.title}</h1>
+              <p className="text-sm mt-2 max-w-xs opacity-90">{item.desc}</p>
+            </div>
           </div>
-        </motion.div>
+        ))}
 
       </div>
+
     </section>
   );
-};
-
-export default AboutHero;
+}

@@ -6,7 +6,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -23,16 +22,13 @@ const playlistScript = localFont({
   display: "swap",
 });
 
-
-export const metadata = {
+export const metadata: Metadata = {
   title: {
     default: "Traamp | It's time to Traamp",
     template: "Traamp | %s",
   },
-
   description:
     "Traamp helps tourists discover hidden gems, connect with guides, and explore destinations with real-time recommendations.",
-
   keywords: [
     "travel app",
     "Traamp",
@@ -41,9 +37,8 @@ export const metadata = {
     "travel recommendations",
     "Sri Lanka tourism",
     "travel discovery",
-    "hidden places"
+    "hidden places",
   ],
-
   openGraph: {
     title: "Traamp – Explore Smarter",
     description:
@@ -60,7 +55,6 @@ export const metadata = {
       },
     ],
   },
-
   twitter: {
     card: "summary_large_image",
     title: "Traamp – Travel Better",
@@ -68,14 +62,11 @@ export const metadata = {
       "Find hidden spots, local guides, and smart recommendations with Traamp.",
     images: ["/logo.png"],
   },
-
   icons: {
     icon: "/favicon.ico",
   },
-
   metadataBase: new URL("https://traamp.com"),
 };
-
 
 export default function RootLayout({
   children,
@@ -84,14 +75,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${playlistScript.variable}
- antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${playlistScript.variable} antialiased`}
+      >
         <Navbar />
-        
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
 }
-
