@@ -4,7 +4,9 @@ import { useState, useRef } from "react";
 
 export default function LocationDemoSection() {
   const [allowed, setAllowed] = useState(false);
-  const videoRef = useRef(null);
+
+  // FIX: Add the HTMLVideoElement type here
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleAllow = () => {
     setAllowed(true);
@@ -19,17 +21,11 @@ export default function LocationDemoSection() {
 
   return (
     <section className="flex flex-col items-center justify-center px-4 py-16 bg-gray-50">
-      <h2 className="text-2xl font-extrabold text-gray-900 mb-8">
-        Try the Traamp Map
-      </h2>
+      <h2 className="text-2xl font-extrabold text-gray-900 mb-8">Try the Traamp Map</h2>
 
-      {/* PHONE SIZE FRAME */}
       <div className="w-full max-w-xs bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center">
-
-        {/* Permission UI */}
         {!allowed && (
           <div className="w-full flex flex-col items-center text-center">
-
             <div className="text-blue-500 text-2xl mb-3">📍</div>
 
             <h3 className="text-lg font-semibold mb-3 leading-tight">
@@ -52,7 +48,6 @@ export default function LocationDemoSection() {
               </div>
             </div>
 
-            {/* STRONG HIGHLIGHT BUTTON */}
             <button
               onClick={handleAllow}
               className="text-blue-500 font-medium text-sm mb-1 hover:opacity-80 animate-iosFlashStrong"
@@ -73,11 +68,9 @@ export default function LocationDemoSection() {
             >
               Deny
             </button>
-
           </div>
         )}
 
-        {/* VIDEO */}
         {allowed && (
           <video
             ref={videoRef}
@@ -88,7 +81,6 @@ export default function LocationDemoSection() {
             <source src="/videos/mapvideo.mp4" type="video/mp4" />
           </video>
         )}
-
       </div>
     </section>
   );
