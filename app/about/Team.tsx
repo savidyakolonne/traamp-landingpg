@@ -10,6 +10,12 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 import { useRef } from "react";
+import PramodyaImg from "@/public/about/Pramodya.jpg";
+import SavidyaImg from "@/public/about/Savidya.jpg";
+import LimashaImg from "@/public/about/Limasha.jpg";
+import DinukiImg from "@/public/about/Dinuki.jpg";
+import DiharaImg from "@/public/about/Dihara.jpg";
+import DiyanaImg from "@/public/about/Diyana.jpg";
 
 interface TeamMember {
   name: string;
@@ -22,52 +28,54 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   {
-    name: "Alice Johnson",
-    position: "Frontend Developer",
-    photo: "/team/alice.jpg",
-    linkedin: "https://www.linkedin.com/in/alicejohnson",
-    github: "https://github.com/alicejohnson",
-    instagram: "https://www.instagram.com/alicejohnson",
+    name: "Pramodya Lakmuthu",
+    position: "Developer",
+    photo: PramodyaImg,
+    linkedin: "http://linkedin.com/in/pramodya-lakmuthu-563a7b30a",
+    github: "https://github.com/promaa-97",
+    instagram: "https://www.instagram.com/p_r_o_m_a_a/",
   },
   {
-    name: "Bob Smith",
-    position: "Backend Developer",
-    photo: "/team/bob.jpg",
-    linkedin: "https://www.linkedin.com/in/bobsmith",
-    github: "https://github.com/bobsmith",
-    instagram: "https://www.instagram.com/bobsmith",
+    name: "Savidya Kolonne",
+    position: "Developer",
+    photo: SavidyaImg,
+    linkedin: "https://www.linkedin.com/in/savidyakolonne/",
+    github: "https://github.com/savidyakolonne",
+    instagram: "https://www.instagram.com/savidyakolonne?igsh=MTU2ODd1eGY2cmF6Nw==",
   },
   {
-    name: "Charlie Lee",
-    position: "UI/UX Designer",
-    photo: "/team/charlie.jpg",
-    linkedin: "https://www.linkedin.com/in/charlielee",
-    github: "https://github.com/charlielee",
-    instagram: "https://www.instagram.com/charlielee",
+    name: "Limasha Githmal",
+    position: "Developer",
+    photo: LimashaImg,
+    linkedin: "www.linkedin.com/in/limasha-githmal-867897322",
+    github: "https://github.com/Limasha-Githmal",
+    instagram: "https://www.instagram.com/limashagithmal/",
   },
   {
-    name: "Diana King",
-    position: "Fullstack Developer",
-    photo: "/team/diana.jpg",
-    linkedin: "https://www.linkedin.com/in/dianaking",
-    github: "https://github.com/dianaking",
-    instagram: "https://www.instagram.com/dianaking",
+    name: "Dinuki Ranaweera",
+    position: "Developer",
+    photo: DinukiImg,
+    linkedin:
+      "https://www.linkedin.com/in/dinuki-ranaweera-46582827a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    github: "https://gist.github.com/Dinuki-Ranaweera",
+    instagram:
+      "https://www.instagram.com/watashiwa.dinukiii?igsh=MW0waW4wNDJneDRnMg%3D%3D&utm_source=qr",
   },
   {
-    name: "Ethan Wright",
-    position: "DevOps Engineer",
-    photo: "/team/ethan.jpg",
-    linkedin: "https://www.linkedin.com/in/ethanwright",
-    github: "https://github.com/ethanwright",
-    instagram: "https://www.instagram.com/ethanwright",
+    name: "Dihara Sathmi",
+    position: "Developer",
+    photo: DiharaImg,
+    linkedin: "https://www.linkedin.com/in/dihara-palihakkara-3aa573334/",
+    github: "https://github.com/Dihara2004",
+    instagram: "https://www.instagram.com/dihara.sathmi?igsh=ZmZzeHEzYnlyaHI4",
   },
   {
-    name: "Fiona Davis",
-    position: "Project Manager",
-    photo: "/team/fiona.jpg",
-    linkedin: "https://www.linkedin.com/in/fionadavis",
-    github: "https://github.com/fionadavis",
-    instagram: "https://www.instagram.com/fionadavis",
+    name: "Diyana Senadi",
+    position: "Developer",
+    photo: DiyanaImg,
+    linkedin: "https://linkedin.com/in/diyana-senadi-jayasekara-65b0a4324",
+    github: "https://github.com/Diyana1111",
+    instagram: "https://www.instagram.com/diyana_1_1_1_1?igsh=MWdtaHYxZDNhN211NQ==",
   },
 ];
 

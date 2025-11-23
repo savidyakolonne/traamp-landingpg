@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Banu from "@/public/about/Banu.jpeg";
+import Danushka from "@/public/about/Danushka.jpeg";
 
 // End Images
 import end1 from "@/public/about/end1.jpg";
@@ -16,14 +18,14 @@ interface Lecturer {
 
 const lecturers: Lecturer[] = [
   {
-    name: "Lecturer One",
-    imgSrc: "/lecturers/lecturer1.jpg",
-    linkedIn: "https://www.linkedin.com/in/lecturerone",
+    name: "Banu Athuraliya",
+    imgSrc: Banu,
+    linkedIn: "https://www.linkedin.com/in/banuathuraliya/?originalSubdomain=lk",
   },
   {
-    name: "Lecturer Two",
-    imgSrc: "/lecturers/lecturer2.jpg",
-    linkedIn: "https://www.linkedin.com/in/lecturertwo",
+    name: "Dhanushka Surendra Rathnayake",
+    imgSrc: Danushka,
+    linkedIn: "https://www.linkedin.com/in/dhanushka-surendra-rathnayake-776ba266/?originalSubdomain=lk",
   },
 ];
 
@@ -38,8 +40,13 @@ const Details = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col gap-6 text-gray-700 text-lg leading-relaxed"
+          className="flex flex-col gap-6 text-gray-700 text-lg leading-relaxed font-semibold"
+
         >
+          <p className="font-bold text-gray-900 text-[25px]">
+            We are a group of students from IIT and the University of Westminster, working together as Team SE-01.
+          </p>
+
           <p>
             Our project is designed to connect travelers in a seamless and engaging
             way. By providing the tools and platform, we help people share

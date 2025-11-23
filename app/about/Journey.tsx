@@ -3,20 +3,24 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+import small1 from "@/public/about/image1.jpg";
+import small2 from "@/public/about/image2.jpg";
+import small3 from "@/public/about/image3.png";
+
 const journeyData = [
   {
     year: "October 2025",
     title: "Interview with Government",
     description:
       "Initial research and planning phase for Traamp. Established core team and project vision.",
-    images: ["/about/small1.jpg", "/about/small1.jpg", "/about/small1.jpg"],
+    images: [small1, small2, small3],
   },
   {
     year: "December 2025",
     title: "Development Phase",
     description:
       "Building core features and establishing the technical infrastructure.",
-    images: ["/about/small1.jpg", "/about/small1.jpg", "/about/small1.jpg"],
+    images: [small1, small2, small3],
   },
 ];
 

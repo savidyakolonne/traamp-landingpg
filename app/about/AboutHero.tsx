@@ -2,106 +2,104 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import small1 from "@/public/about/small1.jpg";
-import small2 from "@/public/about/small2.jpg";
+
+import image1 from "@/public/about/image1.jpg";
+import image2 from "@/public/about/image2.jpg";
 import side1 from "@/public/about/side1.jpg";
 import side2 from "@/public/about/side2.jpg";
-import big from "@/public/about/big.jpg";
+import image3 from "@/public/about/image3.png";
 
 const AboutHero = () => {
   return (
-    <section className="px-4 sm:px-8 md:px-16 lg:px-24 py-20 bg-gray-50">
-      
+    <section className="px-4 sm:px-8 md:px-16 lg:px-24 py-12 bg-gray-50">
+
       {/* Heading */}
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-3xl md:text-5xl font-extrabold text-gray-900 text-center mb-16"
+        className="text-3xl md:text-5xl font-extrabold text-gray-900 text-center mb-12"
       >
         Here's who we are <br className="hidden md:block" /> & what our project is about
       </motion.h2>
 
-      {/* Layout Wrapper */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      {/* Cards */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
 
-        {/* LEFT CARD (text + images) */}
+        {/* LEFT CARD */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="bg-white rounded-2xl shadow-md border border-gray-200 p-8 md:p-10"
+          transition={{ duration: 0.5 }}
+          className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 flex flex-col gap-6"
           style={{ backgroundColor: "#CDE8B1" }}
         >
-          {/* BLOCK 01 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-
-            {/* Paragraph */}
-            <p className="text-gray-800 text-lg leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-              lacinia odio vitae vestibulum vestibulum. Curabitur ut ligula eu
-              lectus tincidunt consequat.
+          {/* BLOCK 1 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+            <p className="text-gray-900 text-3xl font-bold leading-snug">
+              So as you know a lot about TRAMMP by now, but what about the team behind it?
             </p>
 
-            {/* Image */}
-            <div className="w-full flex justify-center">
-              <div className="w-full max-w-[260px] h-[330px] rounded-xl overflow-hidden shadow-lg">
-                <Image src={side1} alt="Image 1" className="w-full h-full object-cover" />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="flex justify-center"
+            >
+              <div className="w-full max-w-[200px] h-[180px] rounded-xl overflow-hidden ">
+                <Image src={side1} alt="Side 1" className="w-full h-full object-contain" />
               </div>
-            </div>
 
+            </motion.div>
           </div>
 
-          {/* Divider */}
-          <div className="my-12 border-t border-gray-300"></div>
+          <div className="border-t border-gray-300"></div>
 
-          {/* BLOCK 02 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-
-            {/* Image LEFT on Desktop */}
-            <div className="w-full flex justify-center order-1 md:order-none">
-              <div className="w-full max-w-[260px] h-[330px] rounded-xl overflow-hidden shadow-lg">
-                <Image src={side2} alt="Image 2" className="w-full h-full object-cover" />
+          {/* BLOCK 2 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="flex justify-center order-1 md:order-none"
+            >
+              <div className="w-full max-w-[200px] h-[180px] rounded-xl overflow-hidden shadow-md">
+                <Image src={side2} alt="Side 2" className="w-full h-full object-cover" />
               </div>
-            </div>
+            </motion.div>
 
-            {/* Paragraph */}
-            <p className="text-gray-800 text-lg leading-relaxed">
-              Sed efficitur, eros eu commodo venenatis, justo sapien malesuada
-              nulla, nec volutpat magna nunc ut mi. Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit.
+            <p className="text-gray-900 text-2xl font-bold leading-snug">
+              Find out who this team is and what they are all about. Discover our journey
+              and the people who made it possible.
             </p>
-
           </div>
         </motion.div>
 
-        {/* RIGHT CARD (2 small + 1 big image + text) */}
+        {/* RIGHT CARD */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="bg-white rounded-2xl shadow-md border border-gray-200 p-8 md:p-10 flex flex-col gap-8"
+          transition={{ duration: 0.5 }}
+          className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 flex flex-col gap-6"
         >
-          {/* Two Small Images Row */}
           <div className="grid grid-cols-2 gap-4">
-            <div className="rounded-lg overflow-hidden hover:scale-105 transition duration-300">
-              <Image src={small1} alt="Small 1" className="w-full h-40 md:h-48 object-cover" />
+            <div className="rounded-xl overflow-hidden shadow-md h-[130px] hover:scale-105 transition">
+              <Image src={image1} alt="image1" className="w-full h-full object-cover" />
             </div>
-            <div className="rounded-lg overflow-hidden hover:scale-105 transition duration-300">
-              <Image src={small2} alt="Small 2" className="w-full h-40 md:h-48 object-cover" />
+            <div className="rounded-xl overflow-hidden shadow-md h-[130px] hover:scale-105 transition">
+              <Image src={image2} alt="image2" className="w-full h-full object-cover" />
             </div>
           </div>
 
-          {/* Text */}
-          <p className="text-gray-800 text-lg leading-relaxed">
-            We work with passion and clarity. Our team collaborates closely to
-            bring ideas to life — combining design, technology and user
-            experience into one seamless journey.
+          <p className="text-gray-800 text-base md:text-lg leading-snug">
+            Our team blends creativity, innovation, and teamwork to build something meaningful.
+            Every idea is shaped with dedication, purpose, and a strong focus on user experience.
           </p>
 
-          {/* Big Image */}
-          <div className="rounded-lg overflow-hidden hover:scale-105 transition duration-300">
-            <Image src={big} alt="Big Image" className="w-full h-56 md:h-80 object-cover" />
+          <div className="rounded-xl overflow-hidden shadow-md h-[200px] hover:scale-105 transition">
+            <Image src={image3} alt="image3" className="w-full h-full object-cover" />
           </div>
         </motion.div>
 
