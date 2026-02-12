@@ -31,7 +31,7 @@ export default function Footer() {
 
           <p className="mt-4 leading-relaxed max-w-sm">
             Helping tourists discover amazing destinations and experiences
-            worldwide.
+            in Sri Lanka.
           </p>
         </div>
 
